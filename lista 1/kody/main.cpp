@@ -37,12 +37,12 @@ void testuj(const std::vector<int>& base, const std::string& nazwa) {
         std::cout << "Insertion Sort:       porownania = " << porownanie << "\t przypisania = " << przypisanie << "\n";
     }
 
-    // 4. Pairwise Insertion Sort
+    // 4.  Insertion Sort dla dwoch
     {
         std::vector<int> v = base;
         porownanie = 0; przypisanie = 0;
         INSERTION_SORT2(v, porownanie, przypisanie);
-        std::cout << "Pairwise Insertion:   porownania = " << porownanie << "\t przypisania = " << przypisanie << "\n";
+        std::cout << "Insertion_parami:   porownania = " << porownanie << "\t przypisania = " << przypisanie << "\n";
     }
 
     // 5. Bubble Sort

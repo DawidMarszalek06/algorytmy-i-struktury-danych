@@ -11,7 +11,7 @@ void BUBBLE_SORT(std::vector<int>& v, long long& porównanie, long long& przypis
             if (v[i] > v[i + 1]) {
                 std::swap(v[i], v[i + 1]);
                 zamiana = true;
-                przypisanie= przypisanie + 2;
+                przypisanie= przypisanie + 3;
             }
         }
     } while (zamiana==true); 
