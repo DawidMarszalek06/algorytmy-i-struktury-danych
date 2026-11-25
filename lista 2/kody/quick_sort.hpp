@@ -21,9 +21,9 @@ int PARTITION(std::vector<int>& v, int left, int right, long long& porównanie, 
 
 void QUICK_SORT(std::vector<int>& v, int left, int right, long long& porównanie, long long& przypisanie) {
     if (left < right) {
-        int pivotIndex = PARTITION(v, left, right, porównanie, przypisanie);
-        QUICK_SORT(v, left, pivotIndex - 1, porównanie, przypisanie);
-        QUICK_SORT(v, pivotIndex + 1, right, porównanie, przypisanie);
+        int pivot = PARTITION(v, left, right, porównanie, przypisanie);
+        QUICK_SORT(v, left, pivot - 1, porównanie, przypisanie);
+        QUICK_SORT(v, pivot + 1, right, porównanie, przypisanie);
     }
 }
 //funkcja dla dwoch pivotoów
@@ -71,4 +71,14 @@ void DUAL_PIVOT_PARTITION(std::vector<int>& v, int left, int right, int& pivot1,
 
     pivot1=left_wsk;
     pivot2=right_wsk;
+}
+
+void DUAL_PIVOT_QUICK_SORT( std:: vector<int>& v, int left, int right,  long long& porównanie, long long& przypisnaie){
+    if(left < right){
+        int pivot1=0, pivot2=0;
+        DUAL_PIVOT_PARTITION(v, left, right, pivot1, pivot2, porównanie, przypisnaie);
+        DUAL_PIVOT_QUICK_SORT(v, left, pivot1-1, porównanie, przypisnaie);
+        DUAL_PIVOT_QUICK_SORT(v, pivot2+1, right, porównanie, przypisnaie);
+        DUAL_PIVOT_QUICK_SORT(v, pivot1+1, pivot2-1, porównanie, przypisnaie);
+    }
 }
